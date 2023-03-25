@@ -31,7 +31,7 @@ export default function Add() {
                 // const response = await axios.post("http://localhost:5000/add", user);
                 const response = await axios({
                     method: "post",
-                    url: `http://localhost:5000/add`,
+                    url: `https://abhisekh-virtualization.onrender.com/add`,
                     params: {
                         id: ""
                     },
