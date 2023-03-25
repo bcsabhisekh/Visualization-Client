@@ -49,7 +49,7 @@ export default function Body() {
                 // const response = await axios.post("http://localhost:5000/add", user);
                 const response = await axios({
                     method: "post",
-                    url: `https://abhisekh-virtualization.onrender.com/filter`,
+                    url: `http://localhost:5000/filter`,
                     params: {
                         id: ""
                     },
@@ -78,10 +78,11 @@ export default function Body() {
             // const response = await axios.get("http://localhost:5000");
             const response = await axios({
                 method: "get",
-                url: `https://abhisekh-virtualization.onrender.com/`,
+                url: `http://localhost:5000/`,
                 params: {
                 }
             });
+            console.log(response.data);
             setData(response.data);
             setIsLoading(false);
         }
@@ -147,199 +148,34 @@ export default function Body() {
                                 </div>
                             </form>
                             <div className="row">
-                                <div className="col-12 col-md-6 boxes">
-                                    <div className="heading d-flex justify-content-center">
-                                        <h5>Intensity Graph</h5>
-                                    </div>
-                                    <BarChart
-                                        width={500}
-                                        height={300}
-                                        data={result[0]}
-                                        margin={{
-                                            top: 5,
-                                            right: 30,
-                                            left: 20,
-                                            bottom: 5
-                                        }}
-                                    >
-                                        <CartesianGrid strokeDasharray="3 3" />
-                                        <XAxis dataKey="name" />
-                                        <YAxis />
-                                        <Tooltip />
-                                        <Legend />
-                                        <Bar dataKey="value" fill="#8884d8" />
-                                        {/* <Bar dataKey="uv" fill="#82ca9d" /> */}
-                                    </BarChart>
-                                </div>
-                                <div className="col-12 col-md-6 boxes">
-                                    <div className="heading d-flex justify-content-center">
-                                        <h5>Likelihood Graph</h5>
-                                    </div>
-                                    <BarChart
-                                        width={500}
-                                        height={300}
-                                        data={result[1]}
-                                        margin={{
-                                            top: 5,
-                                            right: 30,
-                                            left: 20,
-                                            bottom: 5
-                                        }}
-                                    >
-                                        <CartesianGrid strokeDasharray="3 3" />
-                                        <XAxis dataKey="name" />
-                                        <YAxis />
-                                        <Tooltip />
-                                        <Legend />
-                                        <Bar dataKey="value" fill="#8884d8" />
-                                        {/* <Bar dataKey="uv" fill="#82ca9d" /> */}
-                                    </BarChart>
-                                </div>
-                                <div className="col-12 col-md-6 boxes">
-                                    <div className="heading d-flex justify-content-center">
-                                        <h5>Relevance Graph</h5>
-                                    </div>
-                                    <BarChart
-                                        width={500}
-                                        height={300}
-                                        data={result[2]}
-                                        margin={{
-                                            top: 5,
-                                            right: 30,
-                                            left: 20,
-                                            bottom: 5
-                                        }}
-                                    >
-                                        <CartesianGrid strokeDasharray="3 3" />
-                                        <XAxis dataKey="name" />
-                                        <YAxis />
-                                        <Tooltip />
-                                        <Legend />
-                                        <Bar dataKey="value" fill="#8884d8" />
-                                        {/* <Bar dataKey="uv" fill="#82ca9d" /> */}
-                                    </BarChart>
-                                </div>
-                                <div className="col-12 col-md-6 boxes">
-                                    <div className="heading d-flex justify-content-center">
-                                        <h5>Yearly Graph</h5>
-                                    </div>
-
-                                    <BarChart
-                                        width={500}
-                                        height={300}
-                                        data={result[3]}
-                                        margin={{
-                                            top: 5,
-                                            right: 30,
-                                            left: 20,
-                                            bottom: 5
-                                        }}
-                                    >
-                                        <CartesianGrid strokeDasharray="3 3" />
-                                        <XAxis dataKey="name" />
-                                        <YAxis />
-                                        <Tooltip />
-                                        <Legend />
-                                        <Bar dataKey="value" fill="#8884d8" />
-                                        {/* <Bar dataKey="uv" fill="#82ca9d" /> */}
-                                    </BarChart>
-                                </div>
-                                <div className="col-12 col-md-6 boxes">
-                                    <div className="heading d-flex justify-content-center">
-                                        <h5>Country Graph</h5>
-                                    </div>
-                                    <BarChart
-                                        width={500}
-                                        height={300}
-                                        data={result[4]}
-                                        margin={{
-                                            top: 5,
-                                            right: 30,
-                                            left: 20,
-                                            bottom: 5
-                                        }}
-                                    >
-                                        <CartesianGrid strokeDasharray="3 3" />
-                                        <XAxis dataKey="name" />
-                                        <YAxis />
-                                        <Tooltip />
-                                        <Legend />
-                                        <Bar dataKey="value" fill="#8884d8" />
-                                        {/* <Bar dataKey="uv" fill="#82ca9d" /> */}
-                                    </BarChart>
-                                </div>
-                                <div className="col-12 col-md-6 boxes">
-                                    <div className="heading d-flex justify-content-center">
-                                        <h5>Topics Graph</h5>
-                                    </div>
-                                    <BarChart
-                                        width={500}
-                                        height={300}
-                                        data={result[5]}
-                                        margin={{
-                                            top: 5,
-                                            right: 30,
-                                            left: 20,
-                                            bottom: 5
-                                        }}
-                                    >
-                                        <CartesianGrid strokeDasharray="3 3" />
-                                        <XAxis dataKey="name" />
-                                        <YAxis />
-                                        <Tooltip />
-                                        <Legend />
-                                        <Bar dataKey="value" fill="#8884d8" />
-                                        {/* <Bar dataKey="uv" fill="#82ca9d" /> */}
-                                    </BarChart>
-                                </div>
-                                <div className="col-12 col-md-6 boxes">
-                                    <div className="heading d-flex justify-content-center">
-                                        <h5>Region Graph</h5>
-                                    </div>
-                                    <BarChart
-                                        width={500}
-                                        height={300}
-                                        data={result[6]}
-                                        margin={{
-                                            top: 5,
-                                            right: 30,
-                                            left: 20,
-                                            bottom: 5
-                                        }}
-                                    >
-                                        <CartesianGrid strokeDasharray="3 3" />
-                                        <XAxis dataKey="name" />
-                                        <YAxis />
-                                        <Tooltip />
-                                        <Legend />
-                                        <Bar dataKey="value" fill="#8884d8" />
-                                        {/* <Bar dataKey="uv" fill="#82ca9d" /> */}
-                                    </BarChart>
-                                </div>
-                                <div className="col-12 col-md-6 boxes">
-                                    <div className="heading d-flex justify-content-center">
-                                        <h5>City Graph</h5>
-                                    </div>
-                                    <BarChart
-                                        width={500}
-                                        height={300}
-                                        data={result[7]}
-                                        margin={{
-                                            top: 5,
-                                            right: 30,
-                                            left: 20,
-                                            bottom: 5
-                                        }}
-                                    >
-                                        <CartesianGrid strokeDasharray="3 3" />
-                                        <XAxis dataKey="name" />
-                                        <YAxis />
-                                        <Tooltip />
-                                        <Legend />
-                                        <Bar dataKey="value" fill="#8884d8" />
-                                        {/* <Bar dataKey="uv" fill="#82ca9d" /> */}
-                                    </BarChart>
-                                </div>
+                                {result && result.map((item) => {
+                                    return (
+                                        <div className="col-12 col-md-6 boxes">
+                                            <div className="heading d-flex justify-content-center">
+                                                <h5>{item.type}</h5>
+                                            </div>
+                                            <BarChart
+                                                width={500}
+                                                height={300}
+                                                data={item.data}
+                                                margin={{
+                                                    top: 5,
+                                                    right: 30,
+                                                    left: 20,
+                                                    bottom: 5
+                                                }}
+                                            >
+                                                <CartesianGrid strokeDasharray="3 3" />
+                                                <XAxis dataKey="name" />
+                                                <YAxis />
+                                                <Tooltip />
+                                                <Legend />
+                                                <Bar dataKey="value" fill="#8884d8" />
+                                                {/* <Bar dataKey="uv" fill="#82ca9d" /> */}
+                                            </BarChart>
+                                        </div>
+                                    )
+                                })}
                             </div>
                         </div>
                     }</>}
